@@ -75,7 +75,7 @@ const routes: RouteParams[] = [
     content: noPageFoundIndex,
   },
 
-  /* Todo routes object */
+  /* Todo routes */
 
   ...todoRoutes,
 ];

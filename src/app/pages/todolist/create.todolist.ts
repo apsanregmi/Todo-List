@@ -1,15 +1,7 @@
-// import {
-//   CreateTheConnectionLocal,
-//   LocalSyncData,
-//   MakeTheInstanceConceptLocal,
-//   PatcherStructure,
-//   PRIVATE,
-//   UpdateComposition,
-// } from 'mftsccs-browser';
 import {
   CreateTheConnectionLocal,
   LocalSyncData,
-  MakeTheInstanceConcept,
+  MakeTheInstanceConceptLocal,
   PRIVATE,
 } from 'mftsccs-browser';
 import { StatefulWidget } from '../../default/StatefulWidget';
@@ -18,27 +10,20 @@ import './todolist.style.css';
 
 export class CreateTodoList extends StatefulWidget {
   async addEvents(): Promise<void> {
-    let userId = getLocalUserId() as number;
+    let userId: number = getLocalUserId();
     let order = 1;
     let taskName = this.getElementById('taskName') as HTMLInputElement;
     let taskDescription = this.getElementById(
       'taskDescription'
     ) as HTMLInputElement;
-    let buttonSubmit = this.getElementById('submit');
 
+    let buttonSubmit = this.getElementById('submit');
     if (buttonSubmit) {
-      buttonSubmit.addEventListener('click', async (e: Event) => {
-        e.preventDefault();
+      buttonSubmit.onclick = async (ev: Event) => {
+        ev.preventDefault();
 
         try {
-          console.log('Button is clicked for task', {
-            userId,
-            taskName: taskName.value,
-            taskDescription: taskDescription.value,
-          });
-
-          /* New Instance and connections for a task */
-          const mainConcept = await MakeTheInstanceConcept(
+          const mainConcept = await MakeTheInstanceConceptLocal(
             'the_todolist',
             '',
             true,
@@ -46,7 +31,7 @@ export class CreateTodoList extends StatefulWidget {
             PRIVATE
           );
 
-          const taskNameConcept = await MakeTheInstanceConcept(
+          const taskNameConcept = await MakeTheInstanceConceptLocal(
             'taskName',
             taskName.value,
             false,
@@ -54,7 +39,7 @@ export class CreateTodoList extends StatefulWidget {
             PRIVATE
           );
 
-          const taskDescriptionConcept = await MakeTheInstanceConcept(
+          const taskDescriptionConcept = await MakeTheInstanceConceptLocal(
             'taskDescription',
             taskDescription.value,
             false,
@@ -62,7 +47,6 @@ export class CreateTodoList extends StatefulWidget {
             PRIVATE
           );
 
-          // Create connection for task name
           await CreateTheConnectionLocal(
             mainConcept.id,
             taskNameConcept.id,
@@ -72,7 +56,6 @@ export class CreateTodoList extends StatefulWidget {
             userId
           );
 
-          // Create connection for description
           await CreateTheConnectionLocal(
             mainConcept.id,
             taskDescriptionConcept.id,
@@ -82,15 +65,75 @@ export class CreateTodoList extends StatefulWidget {
             userId
           );
 
-          // Syncing data online after creation
           await LocalSyncData.SyncDataOnline();
+
+          console.log('Task successfully created and synced.');
         } catch (error) {
-          // Log an error message if something goes wrong
-          console.error('Error during data submission:', error);
+          console.error('Error during task creation:', error);
         }
-      });
+      };
     }
   }
+
+  // addEvents(): void {
+  //   let userId: number = getLocalUserId();
+  //   let order = 1;
+  //   let taskName = this.getElementById('taskName') as HTMLInputElement;
+  //   let taskDescription = this.getElementById(
+  //     'taskDescription'
+  //   ) as HTMLInputElement;
+
+  //   let buttonSubmit = this.getElementById('submit');
+  //   if (buttonSubmit) {
+  //     buttonSubmit.onclick = (ev: Event) => {
+  //       ev.preventDefault();
+
+  //       MakeTheInstanceConceptLocal(
+  //         'the_todolist',
+  //         '',
+  //         true,
+  //         userId,
+  //         PRIVATE
+  //       ).then((mainConcept) => {
+  //         MakeTheInstanceConceptLocal(
+  //           'taskName',
+  //           taskName.value,
+  //           false,
+  //           userId,
+  //           PRIVATE
+  //         ).then((taskNameConcept) => {
+  //           MakeTheInstanceConceptLocal(
+  //             'taskDescription',
+  //             taskDescription.value,
+  //             false,
+  //             userId,
+  //             PRIVATE
+  //           ).then((taskDescriptionConcept) => {
+  //             CreateTheConnectionLocal(
+  //               mainConcept.id,
+  //               taskNameConcept.id,
+  //               mainConcept.id,
+  //               order,
+  //               '',
+  //               userId
+  //             ).then(() => {
+  //               CreateTheConnectionLocal(
+  //                 mainConcept.id,
+  //                 taskDescriptionConcept.id,
+  //                 mainConcept.id,
+  //                 order,
+  //                 '',
+  //                 userId
+  //               ).then(() => {
+  //                 LocalSyncData.SyncDataOnline();
+  //               });
+  //             });
+  //           });
+  //         });
+  //       });
+  //     };
+  //   }
+  // }
 
   getHtml(): string {
     let html = '';
