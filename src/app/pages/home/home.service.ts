@@ -1,11 +1,11 @@
-import { getLocalStorageData } from "../user/login.service";
+import { getLocalStorageData } from '../user/login.service';
 
 export async function getHeadingText() {
-  return "Freeschema Frontend is the Semantic Concept Connection System framework";
+  return "This todo list application is powered by 'Freeschema Frontend' which is the Semantic Concept Connection System framework";
 }
 
 export async function showAlert() {
-  alert("This is an alert message!");
+  alert('This is an alert message!');
 }
 
 export async function checkLogin() {

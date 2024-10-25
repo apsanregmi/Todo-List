@@ -1,6 +1,7 @@
 import { StatefulWidget } from '../../default/StatefulWidget';
 import { CreateTodoList } from './create.todolist';
 import { TodoList } from './list.todolist';
+import { Sidebar } from './sidebar';
 
 export class todos extends StatefulWidget {
   mountChildWidgets(): void {
@@ -23,7 +24,9 @@ export class todos extends StatefulWidget {
   }
 
   getHtml(): string {
-    let html = `<div class="flex-container">
+    let html = `
+    ${new Sidebar().getHtml()}
+    <div class="flex-container">
                     <div id= "widget1"></div>
                 </div>
                 <div class="flex-container">

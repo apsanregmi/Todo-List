@@ -9,6 +9,7 @@ import {
 import { StatefulWidget } from '../../default/StatefulWidget';
 import { getLocalUserId } from '../user/login.service';
 import './todo.style.css';
+import { Sidebar } from './sidebar';
 
 export class CreateTodoList extends StatefulWidget {
   async addEvents(): Promise<void> {
@@ -98,68 +99,9 @@ export class CreateTodoList extends StatefulWidget {
     }
   }
 
-  // addEvents(): void {
-  //   let userId: number = getLocalUserId();
-  //   let order = 1;
-  //   let taskName = this.getElementById('taskName') as HTMLInputElement;
-  //   let taskDescription = this.getElementById(
-  //     'taskDescription'
-  //   ) as HTMLInputElement;
-
-  //   let buttonSubmit = this.getElementById('submit');
-  //   if (buttonSubmit) {
-  //     buttonSubmit.onclick = (ev: Event) => {
-  //       ev.preventDefault();
-
-  //       MakeTheInstanceConceptLocal(
-  //         'the_todolist',
-  //         '',
-  //         true,
-  //         userId,
-  //         PRIVATE
-  //       ).then((mainConcept) => {
-  //         MakeTheInstanceConceptLocal(
-  //           'taskName',
-  //           taskName.value,
-  //           false,
-  //           userId,
-  //           PRIVATE
-  //         ).then((taskNameConcept) => {
-  //           MakeTheInstanceConceptLocal(
-  //             'taskDescription',
-  //             taskDescription.value,
-  //             false,
-  //             userId,
-  //             PRIVATE
-  //           ).then((taskDescriptionConcept) => {
-  //             CreateTheConnectionLocal(
-  //               mainConcept.id,
-  //               taskNameConcept.id,
-  //               mainConcept.id,
-  //               order,
-  //               '',
-  //               userId
-  //             ).then(() => {
-  //               CreateTheConnectionLocal(
-  //                 mainConcept.id,
-  //                 taskDescriptionConcept.id,
-  //                 mainConcept.id,
-  //                 order,
-  //                 '',
-  //                 userId
-  //               ).then(() => {
-  //                 LocalSyncData.SyncDataOnline();
-  //               });
-  //             });
-  //           });
-  //         });
-  //       });
-  //     };
-  //   }
-  // }
-
   getHtml(): string {
     let html = `
+    ${new Sidebar().getHtml()}
     <div class="task-container">
     <h2 class="task-form-title">Create a Task</h2>
     <form>

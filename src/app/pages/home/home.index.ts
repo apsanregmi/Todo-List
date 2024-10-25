@@ -30,7 +30,7 @@ export default class extends mainViewClass {
         <div class="header">
           <div class="header-logo">
             <img src="./images/freeschema-logo.png" alt="freeschema logo">
-            <h1>Freeschema To do List</h1>
+            <h1> Todo List</h1>
             
           </div>
 
@@ -43,9 +43,9 @@ export default class extends mainViewClass {
         </div>
 
         <main class="main">
-          <h1>Freeschema</h1>
+          <h1>Todo list app</h1>
           <p class="heading-text">${headingText}</p>
-          <p class="welcome-text">Welcome to freeSCHEMA, a powerful platform designed to simplify data management and software development, reducing development time by 50-75%. Whether you are a front-end developer or a full-stack developer.</p>
+          <p class="welcome-text">You can create a task and have control over it through the given options.</p>
           <!-- <button onclick="showAlert()">Show alert</button> -->
           <div class="btn-group">
             ${buttonsHTML}
