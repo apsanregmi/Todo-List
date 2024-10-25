@@ -1,0 +1,43 @@
+.task-container {
+  max-width: 500px;
+  margin: 2em auto;
+  padding: 1.5em;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.task-form-title {
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1em;
+}
+
+.task-form-body {
+  margin-bottom: 1.5em;
+}
+
+.task-form-body label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+  color: #333;
+}
+
+.task-form-body input[type='text'],
+input[type='number'] {
+  width: 100%;
+  padding: 0.8em;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1em;
+  outline: none;
+}
+
+.task-form-body input[type='text']:focus,
+input[type='number']:focus {
+  border-color: purple;
+  box-shadow: 0px 0px 5px purple;
+}

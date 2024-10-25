@@ -1,18 +1,20 @@
-import mainViewClass from "../../default/mainView.class";
-import { checkLogin, getHeadingText, showAlert } from "./home.service";
-import "./home.style.css";
+import mainViewClass from '../../default/mainView.class';
+import { checkLogin, getHeadingText, showAlert } from './home.service';
+import NavWidget from './navWidget';
+import './home.style.css';
 
 export default class extends mainViewClass {
   constructor(params: any) {
     super(params);
-    this.setTitle("Home");
+    this.setTitle('Home');
   }
 
   async getHtml() {
     (window as any).showAlert = showAlert;
     const headingText = await getHeadingText();
     const isLoggedIn = await checkLogin();
-    let buttonsHTML = "";
+    let buttonsHTML = '';
+    const navWidget = new NavWidget(isLoggedIn);
     if (isLoggedIn) {
       buttonsHTML = `
       <router-link href="/logout">Logout</router-link>
@@ -28,8 +30,13 @@ export default class extends mainViewClass {
         <div class="header">
           <div class="header-logo">
             <img src="./images/freeschema-logo.png" alt="freeschema logo">
-            <h1>Freeschema Framework</h1>
+            <h1>Freeschema To do List</h1>
+            
           </div>
+
+           <nav class="header-nav">
+            ${navWidget.getHtml()}
+            </nav>
           <div class="header-link">
             <p>View <a href="https://github.com/Mentor-Friends/Freeschema-Frontend" target="_blank">github</a> for more</p>
           </div>

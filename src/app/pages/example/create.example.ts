@@ -24,7 +24,6 @@ export class create extends StatefulWidget {
     let id = this.getElementById('id') as HTMLInputElement;
 
     if (this.data) {
-      console.log('Data if there is already', this.data);
       name.value = this.data.name;
       phone.value = this.data.phone;
       id.value = this.data.id;

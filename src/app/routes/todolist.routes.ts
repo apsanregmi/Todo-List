@@ -1,5 +1,6 @@
 import { CreateTodoList } from '../pages/todolist/create.todolist';
 import { TodoList } from '../pages/todolist/list.todolist';
+import { todos } from '../pages/todolist/wrapper.todolist';
 
 type TodoRouteParams = {
   path: any;
@@ -9,6 +10,12 @@ type TodoRouteParams = {
 };
 
 const todoRoutes: TodoRouteParams[] = [
+  {
+    path: '/todos',
+    linkLabel: 'Todos',
+    content: todos,
+    isAuthenticated: true,
+  },
   {
     path: '/todolist/create',
     linkLabel: 'Create Todo',
