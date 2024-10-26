@@ -1,6 +1,6 @@
-# Freeschema Frontend
+# Todo list App 
 
-This project serves as the frontend for the Freeschema data fabric, designed to unify frontend and backend workflows in a streamlined environment. The application utilizes TypeScript and Vite for modern and efficient web development.
+The todo list app is developed using FreeSchema Frontend tools and libraries. The reference has been taken from "https://documentation.freeschema.com/" regarding the how the application has to be designed from the architecture layer.
 
 ## Table of Contents
 - [Project Overview](#project-overview)
@@ -13,7 +13,7 @@ This project serves as the frontend for the Freeschema data fabric, designed to 
 
 ## Project Overview
 
-Freeschema Frontend is designed with data management in mind, leveraging the `mftsccs-browser` framework to simplify the handling of both frontend and backend data operations. This project enables the development of dynamic applications with seamless data interactions and is suited for building applications such as to-do lists, phonebooks, and more.
+Todo app is designed with data management in mind, leveraging the `mftsccs-browser` framework to simplify the handling of both frontend and backend data operations. This project enables the development of dynamic applications with seamless data interactions and is suited for building to-do lists.
 
 ## Features
 
@@ -34,5 +34,12 @@ Ensure you have the following installed on your machine:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Mentor-Friends/Freeschema-Frontend.git
+   git clone https://github.com/niraj-khatri-chhetri/Freeschema-Frontend
    cd Freeschema-Frontend
+2. Install dependencies:
+   npm install
+
+## Running the application
+  For local development: 
+   npm run dev
+
