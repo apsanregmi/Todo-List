@@ -45,38 +45,25 @@ npm run dev
 
 ## Project Structure
 FREESCHEMA-FRONTEND
-├── node_modules             # Contains all npm packages and dependencies.
-├── public                   # Directory for public assets like images, fonts, etc., that are accessible from the root URL.
-├── src                      # The main source directory where all the app code resides.
-│   ├── app                  # Contains core application files and utilities.
-│   │   ├── default          # Houses base classes and utilities shared across the application.
-│   │   │   ├── BaseObserver.ts         # Base class for implementing observer pattern.
-│   │   │   ├── BaseWidget.ts           # Base class for widgets, managing state and UI updates.
-│   │   │   ├── mainView.class.ts       # Main view class, likely serves as the entry point for initializing app views.
-│   │   │   └── StatefulWidget.ts       # Base class for stateful widgets, managing component states.
-│   │   ├── environments                # Environment-specific configurations.
-│   │   │   └── environment.dev.ts      # Development environment configurations, such as API endpoints and feature flags.
-│   │   ├── interfaces                  # TypeScript interfaces to define data structures and types.
-│   │   │   └── IUser.interface.ts      # Interface for user-related data, defining the shape of user objects.
-│   ├── pages                           # Contains individual pages and views within the app.
-│   │   ├── example                     # Example page or folder for testing components 
-│   │   ├── home                        # Home page files 
-│   │   └── noPageFound                 # 404 or error page for handling unmatched routes.
-│   ├── todolist                        # Widgets and utilities related to the Todo List feature.
-│   │   ├── create.todolist.ts          # Class widget to handle creating new todo list items.
-│   │   ├── list.todolist.ts            # Class widget to manage and display the list of todos.
-│   │   ├── sidebar.ts                  # Sidebar component for navigation or additional options.
-│   │   ├── todo.style.css              # CSS file containing styles specific to the Todo List components.
-│   │   └── wrapper.todolist.ts         # Wrapper component that might encapsulate the todo list for layout or additional logic.
-│   ├── user                            # Contains user-related functionality and components
-│   ├── routes                          # Defines application routing configurations.
-│   │   └── main.ts                     # Main routing file defining app routes for navigation.
-├── style.css               # Global stylesheet for general application styles.
-├── .gitignore              # Specifies files and directories that should be ignored by Git.
-├── index.html              # The main HTML file for the application entry point.
-├── package-lock.json       # Automatically generated file that locks the dependency versions.
-├── package.json            # Defines project metadata, scripts, and dependencies.
-├── tsconfig.json           # TypeScript configuration file for compiler options.
-└── vite.config.js          # Configuration file for Vite, defining how the app is built and served.
+├── src
+│   ├── app
+│   │   ├── default                             # Core application utilities
+│   │   ├── environments                        # Environment-specific configurations
+│   │   ├── interfaces                          # TypeScript interfaces for data structures
+│   │   └── todolist                            # Main Todo List feature
+│   │       ├── create.todolist.ts              # Handles task creation form and submission
+│   │       ├── list.todolist.ts                 # Manages and displays the list of tasks
+│   │       ├── sidebar.ts                     # Sidebar for navigation or quick options
+│   │       ├── todo.style.css                 # Styling for Todo List components
+│   │       └── wrapper.todolist.ts            # Wraps and organizes Todo List components
+│   ├── routes
+│   │   └── main.ts                        # Defines application routing for navigation
+│   └── style.css                          # Global styles for the app
+├── index.html                             # Main HTML file for the application entry point
+├── .gitignore                    # Files and directories to ignore in Git
+├── package.json                  # Project metadata, scripts, and dependencies
+├── tsconfig.json                 # TypeScript configuration
+└── vite.config.js                # Vite configuration file for build/serve settings
+
 
 
