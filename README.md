@@ -1,8 +1,9 @@
-# Todo list App 
+# Todo list App
 
 The todo list app is developed using FreeSchema Frontend tools and libraries. The reference has been taken from "https://documentation.freeschema.com/" regarding the how the application has to be designed from the architecture layer.
 
 ## Table of Contents
+
 - [Project Overview](#project-overview)
 - [Features](#features)
 - [Setup Instructions](#setup-instructions)
@@ -27,6 +28,7 @@ Todo app is designed with data management in mind, leveraging the `mftsccs-brows
 ### Prerequisites
 
 Ensure you have the following installed on your machine:
+
 - [Node.js](https://nodejs.org/) (version 14.x or above)
 - [npm](https://www.npmjs.com/) (Node Package Manager)
 
@@ -36,34 +38,23 @@ Ensure you have the following installed on your machine:
    ```bash
    git clone https://github.com/niraj-khatri-chhetri/Freeschema-Frontend
    cd Freeschema-Frontend
+   ```
 2. Install dependencies:
    npm install
 
 ## Running the application
-  For local development: 
+
+For local development:
 npm run dev
 
-## Project Structure
-FREESCHEMA-FRONTEND
-├── src
-│   ├── app
-│   │   ├── default                             # Core application utilities
-│   │   ├── environments                        # Environment-specific configurations
-│   │   ├── interfaces                          # TypeScript interfaces for data structures
-│   │   └── todolist                            # Main Todo List feature
-│   │       ├── create.todolist.ts              # Handles task creation form and submission
-│   │       ├── list.todolist.ts                 # Manages and displays the list of tasks
-│   │       ├── sidebar.ts                     # Sidebar for navigation or quick options
-│   │       ├── todo.style.css                 # Styling for Todo List components
-│   │       └── wrapper.todolist.ts            # Wraps and organizes Todo List components
-│   ├── routes
-│   │   └── main.ts                        # Defines application routing for navigation
-│   └── style.css                          # Global styles for the app
-├── index.html                             # Main HTML file for the application entry point
-├── .gitignore                    # Files and directories to ignore in Git
-├── package.json                  # Project metadata, scripts, and dependencies
-├── tsconfig.json                 # TypeScript configuration
-└── vite.config.js                # Vite configuration file for build/serve settings
+## Project Overview
 
+This is a TypeScript-based frontend project using Vite and FreeSchema framework. The Todo List feature is organized within the src/todolist directory and contains all the files necessary for creating, viewing, editing, and managing tasks.
 
+## Key Files in todolist Directory
 
+1. create.todolist.ts : Handles the creation of new tasks.
+2. list.todolist.ts : Manages and displays the list of existing tasks..
+3. sidebar.ts :Contains the sidebar component, which could offer navigation or filtering options related to the Todo List.
+4. todo.style.css : CSS file specifically for styling the Todo List components
+5. wrapper.todolist.ts : A wrapper component that combines and organizes the create and list components.
