@@ -127,7 +127,6 @@ input[type='number']:focus {
   padding: 0;
 }
 
-/* Container for table */
 .task-table-container {
   max-width: 800px;
   margin: 0 auto;
@@ -137,14 +136,12 @@ input[type='number']:focus {
   background-color: #f8f9fa;
 }
 
-/* Table styles */
 .task-table {
   width: 100%;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
 }
 
-/* Header styles */
 .task-table thead tr {
   background-color: #28a745;
   color: white;
@@ -156,7 +153,6 @@ input[type='number']:focus {
   font-weight: 600;
 }
 
-/* Row styles */
 .task-table tbody tr {
   border-bottom: 1px solid #ddd;
   transition: background-color 0.2s ease;
@@ -171,7 +167,6 @@ input[type='number']:focus {
   font-size: 15px;
 }
 
-/* Button styles for delete and edit */
 .task-table tbody td:last-child,
 .task-table tbody td:nth-last-child(2) {
   text-align: center;
