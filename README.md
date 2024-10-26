@@ -41,5 +41,5 @@ Ensure you have the following installed on your machine:
 
 ## Running the application
   For local development: 
-   npm run dev
+npm run dev
 
