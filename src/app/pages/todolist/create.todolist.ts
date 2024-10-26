@@ -21,7 +21,6 @@ export class CreateTodoList extends StatefulWidget {
     ) as HTMLInputElement;
     let id = this.getElementById('id') as HTMLInputElement;
 
-    // Prepopulate the form if editing
     if (this.data) {
       taskName.value = this.data.taskName;
       taskDescription.value = this.data.taskDescription;
@@ -35,7 +34,6 @@ export class CreateTodoList extends StatefulWidget {
 
         try {
           if (id.value) {
-            // Update an existing task
             const patcherStructure: PatcherStructure = new PatcherStructure();
             patcherStructure.compositionId = Number(id.value);
             patcherStructure.patchObject = {
@@ -44,7 +42,11 @@ export class CreateTodoList extends StatefulWidget {
             };
 
             await UpdateComposition(patcherStructure);
-            console.log('Task updated successfully.');
+            new Sidebar().showSuccessMessage();
+
+            taskName.value = '';
+            taskDescription.value = '';
+            id.value = '';
           } else {
             const mainConcept = await MakeTheInstanceConceptLocal(
               'the_todolist',
@@ -90,7 +92,12 @@ export class CreateTodoList extends StatefulWidget {
 
             await LocalSyncData.SyncDataOnline();
 
-            console.log('Task successfully created and synced.');
+            new Sidebar().showSuccessMessage();
+
+            // Reset the form fields after successful creation or update
+            taskName.value = '';
+            taskDescription.value = '';
+            id.value = '';
           }
         } catch (error) {
           console.error('Error during task creation:', error);
@@ -102,6 +109,7 @@ export class CreateTodoList extends StatefulWidget {
   getHtml(): string {
     let html = `
     ${new Sidebar().getHtml()}
+    ${new Sidebar().getSuccessHtml()}
     <div class="task-container">
     <h2 class="task-form-title">Create a Task</h2>
     <form>

@@ -106,6 +106,7 @@ export class TodoList extends StatefulWidget {
   async handleDelete(id: number): Promise<void> {
     if (id) {
       await DeleteConceptById(id);
+      new Sidebar().showSuccessMessage();
     }
   }
 
@@ -123,6 +124,8 @@ export class TodoList extends StatefulWidget {
 
     html = `
             ${new Sidebar().getHtml()}
+             ${new Sidebar().getSuccessHtml()}
+
             <div>
                 <table>
                 <thead>

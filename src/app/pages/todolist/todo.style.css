@@ -94,3 +94,85 @@ input[type='number']:focus {
   color: #fff;
   font-weight: bold;
 }
+
+.success-message {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: #28a745;
+  color: #e6ffed;
+  border: 1px solid #c3e6cb;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  max-width: 350px;
+  text-align: left;
+  z-index: 1000;
+}
+
+.success-message.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.success-message p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Container for table */
+.task-table-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  background-color: #f8f9fa;
+}
+
+/* Table styles */
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+.task-table thead tr {
+  background-color: #28a745;
+  color: white;
+}
+
+.task-table thead th {
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+}
+
+/* Row styles */
+.task-table tbody tr {
+  border-bottom: 1px solid #ddd;
+  transition: background-color 0.2s ease;
+}
+
+.task-table tbody tr:hover {
+  background-color: #f1f3f5;
+}
+
+.task-table tbody td {
+  padding: 12px;
+  font-size: 15px;
+}
+
+/* Button styles for delete and edit */
+.task-table tbody td:last-child,
+.task-table tbody td:nth-last-child(2) {
+  text-align: center;
+}
