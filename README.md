@@ -7,10 +7,8 @@ The todo list app is developed using FreeSchema Frontend tools and libraries. Th
 - [Project Overview](#project-overview)
 - [Features](#features)
 - [Setup Instructions](#setup-instructions)
-- [Scripts](#scripts)
 - [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
+- [Key Files](#key-files-in-todolist-directory)
 
 ## Project Overview
 
